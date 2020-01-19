@@ -6,4 +6,4 @@ deploy:
   provider: heroku
   api_key:
     secure: e78501e8-0406-4fbd-b3d9-6a61d86279a3
-    app: my-trial-app1
+  app: my-trial-app1
