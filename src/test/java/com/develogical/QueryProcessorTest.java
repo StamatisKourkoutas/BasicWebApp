@@ -55,8 +55,8 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("which  of  the  following  numbers  is  both  a  square  and  a  cube:  753,  784"), containsString(""));
     }
     
-    //@Test
-    //public void returnCorrectWhichNubmerisCubeAndSquare() throws Exception {
-     //   assertThat(queryProcessor.process("which  of  the  following  numbers  is  both  a  square  and  a  cube:  753,  64"), containsString("2"));
-    //}
+    @Test
+    public void returnCorrectWhichNubmerisCubeAndSquare() throws Exception {
+        assertThat(queryProcessor.process("which  of  the  following  numbers  is  both  a  square  and  a  cube:  753,  64"), containsString("2"));
+    }
 }
