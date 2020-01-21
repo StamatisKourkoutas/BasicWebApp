@@ -49,4 +49,14 @@ public class QueryProcessorTest {
     public void knowsAdd() throws Exception {
         assertThat(queryProcessor.process("which of the following numbers is the largest:5678 23"), containsString("5678"));
     }
+    
+    @Test
+    public void returnNoneWhichNubmerisCubeAndSquare() throws Exception {
+        assertThat(queryProcessor.process("which  of  the  following  numbers  is  both  a  square  and  a  cube:  753,  784"), containsString(""));
+    }
+    
+    @Test
+    public void returnCorrectWhichNubmerisCubeAndSquare() throws Exception {
+        assertThat(queryProcessor.process("which  of  the  following  numbers  is  both  a  square  and  a  cube:  753,  64"), containsString("2"));
+    }
 }

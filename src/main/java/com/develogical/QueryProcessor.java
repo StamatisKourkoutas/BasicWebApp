@@ -42,7 +42,22 @@ public class QueryProcessor {
             }
             return x;
         }
-
+        if (query.toLowerCase().contains("cube") && query.toLowerCase().contains("square")) {
+            String[] result = query.split(":");
+            String numStr = result[1];
+            String[] numbers = numStr.split(",");
+            for(int i = 0; i < numbers.length; i++) {
+                double number = Double.parseDouble(numbers[i]);
+                double sqrt_num = Math.sqrt(number);
+                double cbrt_num = Math.cbrt(number);
+                int sqrt = (int) sqrt_num;
+                int cbrt = (int) cbrt_num;
+                if ((sqrt_num - sqrt != 0) && (cbrt_num - cbrt != 0)) {
+                    return (i+1) + "";
+                }
+            }
+            return "";
+        }
         return "";
     }
 }
