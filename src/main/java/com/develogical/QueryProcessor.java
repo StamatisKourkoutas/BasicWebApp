@@ -11,7 +11,18 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("stamatis")) {
             return "You are Stamatios Kourkoutas, the famous SE!!";
         }
+        if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")){
+
+            String result = query.substring(8, query.length());
+            String[] nums = result.split(" plus ");
+            int num0 = Integer.parseInt(nums[0]);
+            int num1 = Integer.parseInt(nums[1]);
+            return (num0+num1)+"";
+
+        }
+        
         return "";
+
 
     }
 }
