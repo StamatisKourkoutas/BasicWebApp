@@ -52,7 +52,7 @@ public class QueryProcessor {
                 double cbrt_num = Math.cbrt(number);
                 int sqrt = (int) sqrt_num;
                 int cbrt = (int) cbrt_num;
-                if ((sqrt_num - sqrt != 0) && (cbrt_num - cbrt != 0)) {
+                if ((sqrt_num - sqrt == 0) && (cbrt_num - cbrt == 0)) {
                     return (i+1) + "";
                 }
             }
