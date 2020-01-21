@@ -44,4 +44,9 @@ public class QueryProcessorTest {
     public void doesSum2() throws Exception {
         assertThat(queryProcessor.process("what is 3274981 plus 1"), containsString("3274982"));
     }
+
+    @Test
+    public void knowsAdd() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is the largest:5678 23"), containsString("5678"));
+    }
 }

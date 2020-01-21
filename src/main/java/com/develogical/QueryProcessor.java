@@ -11,6 +11,7 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("stamatis")) {
             return "You are Stamatios Kourkoutas, the famous SE!!";
         }
+
         if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")){
 
             String result = query.substring(8, query.length());
@@ -25,10 +26,23 @@ public class QueryProcessor {
             return "Paris";
         }
 
+        if (query.toLowerCase().contains("largest")) {
+            String[] temp = query.toLowerCase().split(":");
 
+            String[] nums = temp[1].split(" ");
+            int num1 = Integer.parseInt(nums[0]);
+            int num2 = Integer.parseInt(nums[0]);
+            System.out.println(num1);
+            String x = "";
+            if(num1>num2){
+                x = Integer.toString(num1);
+            }
+            else if(num2>num1){
+                x = Integer.toString(num2);
+            }
+            return x;
+        }
 
         return "";
-
-
     }
 }
