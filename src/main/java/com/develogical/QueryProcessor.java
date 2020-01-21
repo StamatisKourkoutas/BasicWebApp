@@ -17,10 +17,10 @@ public class QueryProcessor {
             String[] nums = result.split(" plus ");
             int num0 = Integer.parseInt(nums[0]);
             int num1 = Integer.parseInt(nums[1]);
-            return (num0+num1)+"";
+            return String.valueOf(num0+num1);
 
         }
-        
+
         return "";
 
 
