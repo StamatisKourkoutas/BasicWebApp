@@ -29,4 +29,14 @@ public class QueryProcessorTest {
     public void knowsAboutStamatis() throws Exception {
         assertThat(queryProcessor.process("stamatis"), containsString("Kourkoutas"));
     }
+
+    @Test
+    public void doesSum1() throws Exception {
+        assertThat(queryProcessor.process("what is 20 plus 2"), containsString("22"));
+    }
+
+    @Test
+    public void doesSum2() throws Exception {
+        assertThat(queryProcessor.process("what is 3274981 plus 1"), containsString("3274982"));
+    }
 }
