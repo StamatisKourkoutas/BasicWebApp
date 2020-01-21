@@ -36,6 +36,11 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void eiffel() throws Exception {
+        assertThat(queryProcessor.process("in which city is the Eiffel tower"), containsString("Paris"));
+    }
+
+    @Test
     public void doesSum2() throws Exception {
         assertThat(queryProcessor.process("what is 3274981 plus 1"), containsString("3274982"));
     }

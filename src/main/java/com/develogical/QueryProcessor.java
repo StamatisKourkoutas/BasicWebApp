@@ -21,6 +21,12 @@ public class QueryProcessor {
 
         }
 
+        if (query.toLowerCase().contains("city") && query.toLowerCase().contains("eiffel tower")) {
+            return "Paris";
+        }
+
+
+
         return "";
 
 
