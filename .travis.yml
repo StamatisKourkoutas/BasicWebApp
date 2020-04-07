@@ -1,0 +1,14 @@
+language: java
+jdk:
+- openjdk8
+script: mvn clean verify
+before_install:
+  - openssl aes-256-cbc -k "$secret_password" -in deploypsw.txt.enc -out deploypsw.txt -d
+deploy:
+  provider: heroku
+  api_key:
+    secure: 
+  app: my-trial-app1
+env:
+  global:
+  - secure: FusRpUOJjP8kEF9I6NrZLLSt4bBZQbdjb6zjOEbS1mAAQxD0GFFkaU6/uyomPZaBt8XleihVvopLA5UWoqlm+xnWT2Qkvg8X50SMFtmfXnLHqUuv+Sr2YcRb9Jkkc7F68odlAxhJIklMb+ig2cPg2DJsu41S0YaJfTD1ytsgq79xn643PTClpDtlG5BFWekb3Dpcs8yNJYrJOZap3WDl7+hz6qu4s9kcs02itgB97Tmx20eG+3uQZyki2zt0VpNEdcYZbYuaeA4AKcDG7Q40haE0ZsZl0tWy4XP7goQExyuLIGhTqpZcK83k1hyslSeFXYtKWZyuuFMyJg8Z6C/YaxO28/IrTulUUccMZXtJwNKsGKUQHp5auj0hxAz1SMuiR9kjE4X104eN7260ywSFOEfrTiebG9uD4ONW9A4Rg5PYd86RhXcTJh7vMo1pXJwq+Ver1DIIJ+uEzlq3A7h727LKrOAye9XDPk7hlU7Ew7WgrEHqLqvyHiOPGaWVmwvAYI/aGFsjnXH/OBQN8W/VXaMl4K9WHkNmbXAv8xpF7SiFzehDPXiOxSIMqf266zJZdVQNmaziNaQF5y5vdqv3LfrXjXLe5t4YSUYUg6v2ADDO0bN5iGNaSRhJnmLWArrT33qeZDO6KebSP1HZ6lPF6NvlmBIhB5V8q03Bbr+g2Sk=
